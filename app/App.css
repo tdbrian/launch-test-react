@@ -1,10 +1,4 @@
 .app {
-  background-color: blue;
   height: 50px;
   border: 1px solid #eee;
-}
-
-.bap {
-  background-color: red;
-  height: 25px;
 }

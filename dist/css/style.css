@@ -4548,10 +4548,10 @@ header.navbar {
     height: 55px;
     padding: 0.5rem 1rem;
     background-color: #fff;
-    background-image: url("../img/coreui-logotyp.png");
+    background-image: url("../img/launchtestio-corner-logo.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 70px auto;
+    /*background-size: 70px auto;*/
     border-bottom: 1px solid #cfd8dc; }
 
 header.navbar .navbar-brand {

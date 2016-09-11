@@ -39,6 +39,7 @@ function setupWebpack() {
 
 function setupDevelopment() {
   setupWebpack();
+  app.use(express.static(`${__dirname}/dist`));
   app.get('*', response =(req, res) => {
     res.write(middleware.fileSystem.readFileSync(path.join(`${__dirname}/dist/index.html`)));
     res.end();
