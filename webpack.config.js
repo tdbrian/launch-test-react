@@ -40,6 +40,9 @@ module.exports = {
       test: /\.json?$/,
       loader: 'json'
     }, {
+      test: /.(png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/, 
+      loader: 'url-loader?limit=100000'
+    },{
       test: /\.css$/,
       loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]'
     }]
