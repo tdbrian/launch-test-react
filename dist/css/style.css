@@ -4261,6 +4261,8 @@ a.text-danger:focus, a.text-danger:hover {
 
 .breadcrumb {
   position: relative;
+  margin-right: -1px;
+  margin-top: -1px;
   margin-bottom: 20px;
   border-bottom: 1px solid #cfd8dc; }
 
