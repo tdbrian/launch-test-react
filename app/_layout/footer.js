@@ -13,7 +13,7 @@ export default class Footer extends React.Component {
                 <a href="http://launchtest.io">LaunchTest.io</a> &copy; 2016 Thomas Brian.
             </span>
             <span className="pull-right">
-                Powered by <a href="http://launchtest.io">LaunchTest.io</a>
+                Contribute at <a href="https://github.com/tdbrian/launch-test">Github</a>
             </span>
         </footer>
     );
