@@ -5,8 +5,8 @@ React = require 'react'
 
 configureStore = require './store/configure-store'
 App = require './components/app/app'
-LoginPage = require './components/login/login-page'
-DashboardPage = require './components/dashboard/dashboard-page'
+LoginPage = require './components/login/login.page'
+DashboardPage = require './components/dashboard/dashboard.page'
 
 store = configureStore()
 

@@ -1,5 +1,6 @@
-redux = require 'redux'
+{ createStore, applyMiddleware } = require 'redux'
 rootReducer = require '../reducers'
+thunk = require 'redux-thunk'
 
 module.exports = (initalState) ->
-    redux.createStore rootReducer, initalState
+    createStore rootReducer, initalState, applyMiddleware(thunk.default)
