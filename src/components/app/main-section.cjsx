@@ -5,7 +5,7 @@ class MainSection extends React.Component
   constructor: (props) ->
     super props
   
-    render -> (
+    render ->
         <main class="main">
 
             <ol class="breadcrumb" breadcrumb="">
@@ -22,6 +22,5 @@ class MainSection extends React.Component
             <div id="launch-test-app"></div>
             </div>
         </main>
-    )
 
 module.exports = MainSection

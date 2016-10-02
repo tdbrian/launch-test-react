@@ -1,12 +1,12 @@
 React = require 'react'
 { browserHistory } = require 'react-router'
 
-class Login extends React.Component
+class LoginPage extends React.Component
     
     handleClick: ->
         browserHistory.push '/'
     
-    render: -> (
+    render: ->
         <div className="container">
             <div className="row">
                 <div vamiddle="" className="col-md-8 m-x-auto pull-xs-none" style={{marginTop: "315.5px"}}>
@@ -57,6 +57,5 @@ class Login extends React.Component
                 </div>
             </div>
         </div>
-    )
 
-module.exports = Login
+module.exports = LoginPage

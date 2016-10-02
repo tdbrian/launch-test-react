@@ -5,7 +5,7 @@ class Header extends React.Component
     constructor: (props) ->
         super props
   
-    render: -> (
+    render: ->
         <header className="navbar">
             <div className="container-fluid">
                 <button className="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
@@ -67,6 +67,5 @@ class Header extends React.Component
 
             </div>
         </header>
-    )
 
 module.exports = Header

@@ -5,7 +5,7 @@ class Sidebar extends React.Component
     constructor: (props) ->
         super props
   
-    render: -> (
+    render: ->
         <div className="sidebar">
             <nav className="sidebar-nav">
                 <ul className="nav">
@@ -23,6 +23,5 @@ class Sidebar extends React.Component
                 </ul>
             </nav>
         </div>
-    )
 
 module.exports = Sidebar
