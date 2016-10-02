@@ -1,4 +1,4 @@
-actionTypes = require './action.types'
+actionTypes = require './_action.types'
 currentUserApi = require '../api/authenticate.mock-api'
 
 exports.attemptLogin = (username, password) ->
