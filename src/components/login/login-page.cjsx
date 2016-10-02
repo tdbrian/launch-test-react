@@ -1,9 +1,19 @@
 React = require 'react'
 { browserHistory } = require 'react-router'
+{ connect } = require 'react-redux'
+{ bindActionCreators } = require 'redux'
+attemptLoginActions = require '../../actions/attempt-login.actions'
 
 class LoginPage extends React.Component
     
-    handleClick: ->
+    constructor: (props) ->
+        super props
+        @state = 
+            username: ''
+            password: ''
+
+    onAttemptLogin: =>
+        @props.attemptLoginActions.attemptLogin @state.username, @state.password
         browserHistory.push '/dashboard'
     
     render: ->
@@ -17,11 +27,12 @@ class LoginPage extends React.Component
                                 <p className="text-muted">Sign In to your LaunchTest.io account</p>
                                 <div className="input-group m-b-1">
                                     <span className="input-group-addon"><i className="icon-user"></i></span>
-                                    <input type="text" className="form-control" placeholder="Username"></input>
+                                    <input type="text" value={@state.username} className="form-control" placeholder="Username"></input>
                                 </div>
                                 <div className="input-group m-b-2">
                                     <span className="input-group-addon"><i className="icon-lock"></i></span>
                                     <input type="password" 
+                                        value={@state.passwordInput}
                                         className="form-control" 
                                         placeholder="Password" 
                                         autoComplete="off" 
@@ -37,7 +48,7 @@ class LoginPage extends React.Component
                                 </div>
                                 <div className="row">
                                     <div className="col-xs-6">
-                                        <button type="button" onClick={@handleClick} className="btn btn-primary p-x-2">Login</button>
+                                        <button type="button" onClick={@onAttemptLogin} className="btn btn-primary p-x-2">Login</button>
                                     </div>
                                     <div className="col-xs-6 text-xs-right">
                                         <button type="button" className="btn btn-link p-x-0">Forgot password?</button>
@@ -59,4 +70,10 @@ class LoginPage extends React.Component
             </div>
         </div>
 
-module.exports = LoginPage
+mapStateToProps = (state, ownProps) ->
+    currentUser: state.currentUser
+
+mapDispatchToProps = (dispatch) ->
+    attemptLoginActions: bindActionCreators attemptLoginActions, dispatch
+
+module.exports = connect(mapStateToProps, mapDispatchToProps) LoginPage

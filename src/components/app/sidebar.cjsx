@@ -12,7 +12,7 @@ class Sidebar extends React.Component
                     <li className="divider"></li>
                     <li className="nav-title">Pinned Projects</li>
                         <li className="nav-item">
-                            <a className="nav-link" href="main.html"><i className="icon-speedometer"></i> Dashboard 
+                            <a className="nav-link" href="main.html"><i className="icon-speedometer"></i> Dashboard
                                 <span className="tag tag-info">NEW</span>
                             </a>
                         </li>
