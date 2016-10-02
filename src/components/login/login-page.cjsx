@@ -4,7 +4,7 @@ React = require 'react'
 class LoginPage extends React.Component
     
     handleClick: ->
-        browserHistory.push '/'
+        browserHistory.push '/dashboard'
     
     render: ->
         <div className="container">
@@ -14,7 +14,7 @@ class LoginPage extends React.Component
                         <div className="card p-a-2">
                             <div className="card-block">
                                 <h1>Login</h1>
-                                <p className="text-muted">Sign In to your account</p>
+                                <p className="text-muted">Sign In to your LaunchTest.io account</p>
                                 <div className="input-group m-b-1">
                                     <span className="input-group-addon"><i className="icon-user"></i></span>
                                     <input type="text" className="form-control" placeholder="Username"></input>
@@ -27,16 +27,17 @@ class LoginPage extends React.Component
                                         autoComplete="off" 
                                         style={{
                                             cursor: "auto", 
-                                            backgroundImage: "url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;)", 
+                                            backgroundImage: "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC)", 
                                             backgroundAttachment: "scroll", 
                                             backgroundSize: "16px 18px", 
                                             backgroundPosition: "98% 50%", 
-                                            backgroundRepeat: "no-repeat"}}>
+                                            backgroundRepeat: "no-repeat"
+                                        }}>
                                     </input>
                                 </div>
                                 <div className="row">
                                     <div className="col-xs-6">
-                                        <button type="button" onClick={this.handleClick} className="btn btn-primary p-x-2">Login</button>
+                                        <button type="button" onClick={@handleClick} className="btn btn-primary p-x-2">Login</button>
                                     </div>
                                     <div className="col-xs-6 text-xs-right">
                                         <button type="button" className="btn btn-link p-x-0">Forgot password?</button>
