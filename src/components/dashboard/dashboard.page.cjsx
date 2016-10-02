@@ -3,8 +3,8 @@ DashboardBreadcrumb = require './dashboard-breadcrumb'
 
 class DashboardPage extends React.Component
 
-    constructor: (props) ->
-        super props
+    constructor: (props, context) ->
+        super props, context
 
     render: ->
         <main className = "main" >
