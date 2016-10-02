@@ -1,13 +1,11 @@
-import React from 'react';
+React = require 'react'
 
-export default class Header extends React.Component {
+class Header extends React.Component
   
-  constructor(props) {
-    super(props);
-  }
+    constructor: (props) ->
+        super props
   
-  render() {
-    return (
+    render: -> (
         <header className="navbar">
             <div className="container-fluid">
                 <button className="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
@@ -69,7 +67,6 @@ export default class Header extends React.Component {
 
             </div>
         </header>
-    );
-  }
+    )
 
-}
+module.exports = Header

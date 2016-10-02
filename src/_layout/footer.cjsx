@@ -1,13 +1,11 @@
-import React from 'react';
+React = require 'react'
 
-export default class Footer extends React.Component {
+class Footer extends React.Component
   
-  constructor(props) {
-    super(props);
-  }
+    constructor: (props) ->
+        super props
   
-  render() {
-    return (
+    render: -> (
         <footer className="footer">
             <span className="text-left">
                 <a href="http://launchtest.io">LaunchTest.io</a> &copy; 2016 Thomas Brian.
@@ -16,7 +14,6 @@ export default class Footer extends React.Component {
                 Contribute at <a href="https://github.com/tdbrian/launch-test">Github</a>
             </span>
         </footer>
-    );
-  }
+    )
 
-}
+module.exports = Footer

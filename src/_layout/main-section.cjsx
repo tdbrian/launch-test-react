@@ -1,13 +1,11 @@
-import React from 'react';
+React = require 'react'
 
-export default class MainSection extends React.Component {
+class MainSection extends React.Component
   
-  constructor(props) {
-    super(props);
-  }
+  constructor: (props) ->
+    super props
   
-  render() {
-    return (
+    render -> (
         <main class="main">
 
             <ol class="breadcrumb" breadcrumb="">
@@ -24,8 +22,6 @@ export default class MainSection extends React.Component {
             <div id="launch-test-app"></div>
             </div>
         </main>
-    );
-  }
+    )
 
-}
-
+module.exports = MainSection
