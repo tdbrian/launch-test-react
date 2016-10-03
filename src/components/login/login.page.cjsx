@@ -1,5 +1,4 @@
 React = require 'react'
-{ browserHistory } = require 'react-router'
 { connect } = require 'react-redux'
 { bindActionCreators } = require 'redux'
 attemptLoginActions = require '../../actions/attempt-login.actions'
@@ -14,14 +13,26 @@ class LoginPage extends React.Component
             username: ''
             password: ''
 
+    updateLoginState: (event) =>
+        @state[event.target.name] = event.target.value
+        @setState @state
+
+    onPasswordKeypress: (event) =>
+        if event.key is 'Enter' then @onAttemptLogin()
+
     onAttemptLogin: =>
         @props.attemptLoginActions.attemptLogin @state.username, @state.password
-        browserHistory.push '/dashboard'
     
+    onForgotPassword: =>
+        console.error 'not implemented'
+        debugger;
+
     render: ->
         <LoginContent 
-            username={@state.username} 
             onAttemptLogin={@onAttemptLogin}
+            updateLoginState={@updateLoginState}
+            onPasswordKeypress={@onPasswordKeypress}
+            onForgotPassword={@onForgotPassword}
         />
 
 mapStateToProps = (state, ownProps) ->

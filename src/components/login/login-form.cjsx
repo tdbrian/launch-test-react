@@ -1,19 +1,22 @@
 React = require 'react'
 
-module.exports = ({onAttemptLogin}) =>
+module.exports = ({onAttemptLogin, onChange, onPasswordEnter, onForgotPassword}) =>
     <div className="card p-a-2">
         <div className="card-block">
             <h1>Login</h1>
             <p className="text-muted">Sign In to your LaunchTest.io account</p>
             <div className="input-group m-b-1">
                 <span className="input-group-addon"><i className="icon-user"></i></span>
-                <input type="text" className="form-control" placeholder="Username"></input>
+                <input name="username" type="text" className="form-control" placeholder="Username" onChange={onChange}></input>
             </div>
             <div className="input-group m-b-2">
                 <span className="input-group-addon"><i className="icon-lock"></i></span>
-                <input type="password" 
+                <input name="password"
+                    type="password"
                     className="form-control" 
-                    placeholder="Password" 
+                    placeholder="Password"
+                    onChange={onChange}
+                    onKeyUp={onPasswordEnter}
                     autoComplete="off" 
                     style={{
                         cursor: "auto", 
@@ -30,7 +33,7 @@ module.exports = ({onAttemptLogin}) =>
                     <button type="button" onClick={onAttemptLogin} className="btn btn-primary p-x-2">Login</button>
                 </div>
                 <div className="col-xs-6 text-xs-right">
-                    <button type="button" className="btn btn-link p-x-0">Forgot password?</button>
+                    <button type="button" className="btn btn-link p-x-0" onClick={onForgotPassword}>Forgot password?</button>
                 </div>
             </div>
         </div>

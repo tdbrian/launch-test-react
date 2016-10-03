@@ -5,9 +5,10 @@ currentUser =
     id: 1234
     firstName: 'Thomas'
     lastName: 'Brian'
+    username: 'tdbrian'
 
 exports.authenticate = (username, password, cb) ->
     setTimeout -> 
-        if username is currentUser.firstName and password is currentUser.lastName then cb Map(currentUser)
+        if username is currentUser.username and password is 'pa55word' then cb Map(currentUser)
         else cb null, 'Invalid login'
     , delay
