@@ -3,12 +3,12 @@
 module.exports = 
     
     currentUser: Map
-        id: null
         firstName: ''
+        id: null
         lastName: ''
         username: ''
     
     loginStatus: Map
-        isLoggedIn: false
         isAuthenticating: false
+        isLoggedIn: false
         loginError: ''

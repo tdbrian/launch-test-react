@@ -1,4 +1,5 @@
 React = require 'react'
+{ section, div } = React.DOM
 { render } = require 'react-dom'
 Header = require './header'
 Sidebar = require './sidebar'
@@ -12,11 +13,10 @@ class App extends React.Component
 			test: 'foo'
 	
 	render: ->
-		<section>
-			<Header/>
-			<Sidebar/>
-			<div>{this.props.children}</div>
-			<Footer/>
-		</section>
+		section {},
+			Header()
+			Sidebar()
+			div {}, @props.children
+			Footer()
 
 module.exports = App

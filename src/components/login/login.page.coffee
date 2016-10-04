@@ -28,12 +28,11 @@ class LoginPage extends React.Component
         debugger;
 
     render: ->
-        <LoginContent 
-            onAttemptLogin={@onAttemptLogin}
-            updateLoginState={@updateLoginState}
-            onPasswordKeypress={@onPasswordKeypress}
-            onForgotPassword={@onForgotPassword}
-        />
+        LoginContent 
+            onAttemptLogin: @onAttemptLogin
+            updateLoginState: @updateLoginState
+            onPasswordKeypress: @onPasswordKeypress
+            onForgotPassword: @onForgotPassword
 
 mapStateToProps = (state, ownProps) ->
     currentUser: state.currentUser
