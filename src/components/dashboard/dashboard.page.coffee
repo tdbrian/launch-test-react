@@ -1,4 +1,5 @@
 React = require 'react'
+{ main } = React
 DashboardBreadcrumb = require './dashboard-breadcrumb'
 
 class DashboardPage extends React.Component
@@ -7,8 +8,6 @@ class DashboardPage extends React.Component
         super props, context
 
     render: ->
-        <main className = "main" >
-            <DashboardBreadcrumb/> 
-        </main>
+        main className: 'main', DashboardBreadcrumb 
 
 module.exports = DashboardPage

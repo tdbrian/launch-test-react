@@ -16,11 +16,11 @@ class Header extends React.Component
                     li className: 'nav-item',
                         a className: 'nav-link navbar-toggler layout-toggler', href: '#'
                     li className: 'nav-item p-x-1',
-                        a className: 'nav-link' href: '#', 'Projects'
+                        a className: 'nav-link', href: '#', 'Projects'
                     li className: 'nav-item p-x-1',
-                        a className: 'nav-link' href: '#', 'Users'
+                        a className: 'nav-link', href: '#', 'Users'
                     li className: 'nav-item p-x-1',
-                        a className: 'nav-link' href: '#', 'Settings'
+                        a className: 'nav-link', href: '#', 'Settings'
                 
                 ul className: 'nav navbar-nav pull-right hidden-md-down',
                     li className: 'nav-item',
@@ -28,19 +28,19 @@ class Header extends React.Component
                             i className: 'icon-bell'
                             span className: 'tag tag-pill tag-danger'
                     li className: 'nav-item',
-                        a className: 'nav-link' href: '#',
+                        a className: 'nav-link', href: '#',
                             i className: 'icon-list'
                     li className: 'nav-item',
-                        a className: 'nav-link' href: '#',
+                        a className: 'nav-link', href: '#',
                             i className: 'icon-location-pin'
                     li className: 'nav-item dropdown',
                         a 
                             className: 'nav-link dropdown-toggle' 
-                            data-toggle: 'dropdown' 
+                            dataToggle: 'dropdown' 
                             href: '#' 
                             role: 'button' 
-                            aria-haspopup: 'true' 
-                            aria-expanded: 'false'
+                            ariaHaspopup: 'true' 
+                            ariaExpanded: 'false'
                             img src: 'img/avatars/default-user-pic.jpg', className: 'img-avatar', alt: 'admin@bootstrapmaster.com'
                             span className: 'hidden-md-down', 'Admin'
                         
@@ -59,7 +59,7 @@ class Header extends React.Component
                                 i className: 'fa fa-tasks'
                                 'Tasks'
                                 span className: 'tag tag-danger', '2'
-                            a className: 'dropdown-item', href: '#'
+                            a className: 'dropdown-item', href: '#',
                                 i className: 'fa fa-comments'
                                 'Comment'
                                 span className: 'tag tag-warning', '2'
