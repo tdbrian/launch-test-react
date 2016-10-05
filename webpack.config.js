@@ -20,7 +20,7 @@ module.exports = {
         modulesDirectories: ['node_modules']
     },
     resolve: {
-        extensions: ['', '.js', '.cjsx', '.coffee']
+        extensions: ['', '.js', '.coffee']
     },
     devServer: {
         contentBase: path.resolve(__dirname, 'dist')
@@ -31,7 +31,6 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.jsx$/, include: path.join(__dirname, 'src'), loaders: ['jsx-loader?insertPragma=React.DOM'] },
-            { test: /\.cjsx$/, loaders: ['coffee', 'cjsx'] },
             { test: /\.coffee$/, loader: 'coffee' },
             { test: /(\.css)$/, loaders: ['style', 'css'] }, 
             { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' }, 

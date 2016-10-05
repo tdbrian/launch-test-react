@@ -8,7 +8,6 @@ AppRoutes = require './routes'
 
 store = configureStore()
 
-routes =
-	Provider store: store, AppRoutes()
+routes = Provider store: store, AppRoutes()
 
 render routes, document.getElementById('launch-test-app')

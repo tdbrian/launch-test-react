@@ -12,4 +12,7 @@ describe 'LoginForm', ->
             onPasswordEnter: () -> {}
             onForgotPassword: () -> {}
         
-        shallow(<LoginForm />)
+        shallow(LoginForm())
+
+    it 'should pass today', ->
+        expect(true).toEqual true 
