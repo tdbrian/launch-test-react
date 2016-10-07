@@ -6,12 +6,12 @@ IndexRoute = React.createFactory ReactRouter.IndexRoute
 { browserHistory } = ReactRouter
 
 App = require './components/app/app'
-LoginPage = require './components/login/login.page'
+{ LoginPage, LoginPageConnect } = require './components/login/login.page'
 DashboardPage = require './components/dashboard/dashboard.page'
 
 module.exports = ->
     Router history: browserHistory,
-        Route path: '/', component: LoginPage
+        Route path: '/', component: LoginPageConnect
         Route path: '/dashboard', component: App,
             IndexRoute component: DashboardPage
             Route path: 'dashboard', component: DashboardPage

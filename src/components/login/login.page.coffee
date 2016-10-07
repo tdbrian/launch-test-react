@@ -25,7 +25,6 @@ class LoginPage extends React.Component
     
     onForgotPassword: =>
         console.error 'not implemented'
-        debugger;
 
     render: ->
         LoginContent 
@@ -40,4 +39,6 @@ mapStateToProps = (state, ownProps) ->
 mapDispatchToProps = (dispatch) ->
     attemptLoginActions: bindActionCreators attemptLoginActions, dispatch
 
-module.exports = connect(mapStateToProps, mapDispatchToProps) LoginPage
+module.exports = 
+    LoginPage: LoginPage
+    LoginPageConnect: connect(mapStateToProps, mapDispatchToProps) LoginPage
