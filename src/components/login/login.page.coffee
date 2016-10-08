@@ -1,7 +1,7 @@
 React = require 'react'
 { connect } = require 'react-redux'
 { bindActionCreators } = require 'redux'
-attemptLoginActions = require '../../actions/attempt-login.actions'
+attemptLoginActions = require '../../actions/authentication.actions'
 
 LoginContent = require './login-content'
 

@@ -11,4 +11,4 @@ module.exports =
     loginStatus: Map
         isAuthenticating: false
         isLoggedIn: false
-        loginError: ''
+        loginError: null
