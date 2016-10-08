@@ -22,4 +22,4 @@ exports.attemptLogin = (username, password, cb) ->
             if err then dispatch exports.authenticationErrored()
             else if user is 'invalid' then dispatch exports.authenticationFailed() 
             else dispatch exports.authenticationSucceeded(user)
-            cb()
+            if cb then cb()

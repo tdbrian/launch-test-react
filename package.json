@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm-run-all --parallel test:watch webpack:dev",
     "webpack:dev": "webpack-dev-server --hot --inline --colors --open",
-    "test": "mocha --reporter spec --compilers coffee:coffee-script/register tools/testSetup.coffee \"src/**/*.test.coffee\"",
+    "test": "mocha --reporter progress --compilers coffee:coffee-script/register tools/testSetup.coffee \"src/**/*.test.coffee\"",
     "test:watch": "npm run test -- --watch"
   },
   "repository": {
@@ -31,7 +31,9 @@
     "url": "https://github.com/tdbrian/launch-test/issues"
   },
   "homepage": "https://github.com/tdbrian/launch-test#readme",
-  "dependencies": {},
+  "dependencies": {
+    "redux-devtools-extension": "^1.0.0"
+  },
   "devDependencies": {
     "bootstrap": "3.3.6",
     "coffee-loader": "^0.7.2",

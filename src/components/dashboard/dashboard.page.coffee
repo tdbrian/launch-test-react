@@ -1,5 +1,5 @@
 React = require 'react'
-{ main } = React
+{ main } = React.DOM
 DashboardBreadcrumb = require './dashboard-breadcrumb'
 
 class DashboardPage extends React.Component
