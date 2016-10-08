@@ -2,7 +2,7 @@
 LoginForm = require './login-form'
 LoginRegister = require './login-register'
 
-module.exports = ({onAttemptLogin, updateLoginState, onPasswordKeypress, onForgotPassword}) =>
+module.exports = ({onAttemptLogin, updateLoginState, onPasswordKeypress, onForgotPassword, authStatus}) =>
     div className: 'container',
         div className: 'row',
             div 
@@ -16,4 +16,5 @@ module.exports = ({onAttemptLogin, updateLoginState, onPasswordKeypress, onForgo
                         onChange: updateLoginState 
                         onPasswordEnter: onPasswordKeypress 
                         onForgotPassword: onForgotPassword
+                        authStatus: authStatus
                     LoginRegister()

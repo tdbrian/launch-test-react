@@ -33,10 +33,11 @@ class LoginPage extends React.Component
             updateLoginState: @updateLoginState
             onPasswordKeypress: @onPasswordKeypress
             onForgotPassword: @onForgotPassword
+            authStatus: @props.authStatus
 
 mapStateToProps = (state, ownProps) ->
     authStatus = state.authenticationStatus.toObject()
-    # if authStatus.isAuthenticated then browserHistory.push '/dashboard'
+    if authStatus.isAuthenticated then browserHistory.push '/dashboard'
     currentUser: state.currentUser.toObject(), authStatus: authStatus
 
 mapDispatchToProps = (dispatch) ->

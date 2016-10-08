@@ -1,6 +1,6 @@
 { div, h1, p, span, i, input, button } = require('react').DOM
 
-module.exports = ({onAttemptLogin, onChange, onPasswordEnter, onForgotPassword}) =>
+module.exports = ({onAttemptLogin, onChange, onPasswordEnter, onForgotPassword, authStatus}) =>
     div className: 'card p-a-2',
         div className: 'card-block',
             h1 {}, 'Login'
@@ -27,6 +27,9 @@ module.exports = ({onAttemptLogin, onChange, onPasswordEnter, onForgotPassword})
                     onKeyUp: onPasswordEnter
                     autoComplete: 'off'
             
+            if authStatus?.isErrored or authStatus?.isInvalid then div className: 'row',
+                div className: 'alert alert-danger', authStatus?.message
+
             div className: 'row',
                 div className: 'col-xs-6',
                     button type: 'button', onClick: onAttemptLogin, className: 'btn btn-primary p-x-2', 'Login'
