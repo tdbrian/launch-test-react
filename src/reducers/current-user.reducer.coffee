@@ -3,7 +3,7 @@ initalState = require './_initial.state'
 
 module.exports = (state = initalState.currentUser, action) ->
     switch action.type
-        when actionTypes.ATTEMPTING_LOGIN then state
-        when actionTypes.LOGIN_FAILED then state
+        when actionTypes.ATTEMPTING_AUTHENTICATION then state
+        when actionTypes.AUTHENTICATION_FAILED then state
         when actionTypes.LOGIN_SUCCEEDED then state
         else state

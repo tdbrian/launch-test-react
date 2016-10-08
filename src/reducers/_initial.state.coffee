@@ -8,7 +8,9 @@ module.exports =
         lastName: ''
         username: ''
     
-    loginStatus: Map
+    authenticationStatus: Map
         isAuthenticating: false
-        isLoggedIn: false
-        loginError: null
+        isAuthenticated: false
+        isInvalid: false
+        isErrored: false
+        message: null

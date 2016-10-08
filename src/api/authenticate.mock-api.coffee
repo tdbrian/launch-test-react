@@ -9,6 +9,7 @@ currentUser =
 
 exports.authenticate = (username, password, cb) ->
     setTimeout -> 
+        if username is 'server error' then cb null, 'Sorry, there was an error Logging In'
         if username is currentUser.username and password is 'pa55word' then cb Map(currentUser)
-        else cb null, 'Invalid login'
+        else cb 'invalid'
     , delay

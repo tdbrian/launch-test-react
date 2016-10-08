@@ -35,6 +35,7 @@ class LoginPage extends React.Component
 
 mapStateToProps = (state, ownProps) ->
     currentUser: state.currentUser
+    authStatus: state.authenticationStatus
 
 mapDispatchToProps = (dispatch) ->
     attemptLoginActions: bindActionCreators attemptLoginActions, dispatch

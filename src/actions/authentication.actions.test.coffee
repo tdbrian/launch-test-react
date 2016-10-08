@@ -6,17 +6,17 @@ configureStore = require 'redux-mock-store'
 
 initalState = require '../reducers/_initial.state'
 authenticationActions = require './authentication.actions'
-actionTypes = require './_action.types'
 
 mockStore = configureStore [thunk]
 
 describe 'Autentication actions', ->
-
+    store = null
+    beforeEach -> store = mockStore initalState
     afterEach -> nock.cleanAll()
 
     describe 'attempt login', ->
 
-        it 'should call ATTEMPTING_LOGIN and LOGIN_SUCCEEDED with a valid username and password', (done) ->
+        it 'should call ATTEMPTING_AUTHENTICATION and LOGIN_SUCCEEDED with a valid username and password', (done) ->
 
             expectedUser =
                 id: 1234
@@ -24,32 +24,31 @@ describe 'Autentication actions', ->
                 lastName: 'Brian'
                 username: 'tdbrian'
 
-            store = mockStore initalState
-
             expectedActions = [
-                { type: actionTypes.ATTEMPTING_LOGIN },
-                { type: actionTypes.LOGIN_SUCCEEDED, user: Map expectedUser }
+                authenticationActions.attemptingAuthentication()
+                authenticationActions.authenticationSucceeded(Map expectedUser)
             ]
 
             store.dispatch authenticationActions.attemptLogin expectedUser.username, 'pa55word', () ->
                 expect(store.getActions()).toEqual expectedActions
                 done()
 
-        it 'should call ATTEMPTING_LOGIN and LOGIN_FAILED with a valid username and invalid password', (done) ->
-
-            expectedUser =
-                id: 1234
-                firstName: 'Thomas'
-                lastName: 'Brian'
-                username: 'tdbrian'
-
-            store = mockStore initalState
-
+        it 'should call ATTEMPTING_AUTHENTICATION and AUTHENTICATION_FAILED with a valid username and invalid password', (done) ->
             expectedActions = [
-                { type: actionTypes.ATTEMPTING_LOGIN },
-                { type: actionTypes.LOGIN_FAILED, error: 'Invalid login' }
+                authenticationActions.attemptingAuthentication()
+                authenticationActions.authenticationFailed()
             ]
 
-            store.dispatch authenticationActions.attemptLogin expectedUser.username, 'invalidpassword', () ->
+            store.dispatch authenticationActions.attemptLogin 'tdbrian', 'invalidpassword', () ->
+                expect(store.getActions()).toEqual expectedActions
+                done()
+
+        it 'should call ATTEMPTING_AUTHENTICATION and AUTHENTICATION_ERRORED when a server side error occurs', (done) ->
+            expectedActions = [
+                authenticationActions.attemptingAuthentication()
+                authenticationActions.authenticationErrored()
+            ]
+
+            store.dispatch authenticationActions.attemptLogin 'server error', 'invalidpassword', () ->
                 expect(store.getActions()).toEqual expectedActions
                 done()

@@ -1,7 +1,7 @@
 { combineReducers } = require 'redux'
 currentUser = require './current-user.reducer'
-loginStatus = require './login-status.reducer'
+authenticationStatus = require './authentication-status.reducer'
 
 module.exports = combineReducers
     currentUser: currentUser
-    loginStatus: loginStatus
+    authenticationStatus: authenticationStatus
