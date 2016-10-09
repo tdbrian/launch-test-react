@@ -1,5 +1,5 @@
 React = require 'react'
-{ header, div, a, ul, li, button, img, span, strong, i } = React
+{ header, div, a, ul, li, button, img, span, strong, i } = React.DOM
 
 class Header extends React.Component
   

@@ -1,6 +1,6 @@
 React = require 'react'
 { main } = React.DOM
-DashboardBreadcrumb = require './dashboard-breadcrumb'
+DashboardBreadcrumb = React.createFactory require('./dashboard-breadcrumb')
 
 class DashboardPage extends React.Component
 
@@ -8,6 +8,6 @@ class DashboardPage extends React.Component
         super props, context
 
     render: ->
-        main className: 'main', DashboardBreadcrumb 
+        main className: 'main', DashboardBreadcrumb()
 
 module.exports = DashboardPage

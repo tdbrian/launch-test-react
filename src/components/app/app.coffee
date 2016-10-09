@@ -1,9 +1,9 @@
 React = require 'react'
 { section, div } = React.DOM
 { render } = require 'react-dom'
-Header = require './header'
-Sidebar = require './sidebar'
-Footer = require './footer'
+Header = React.createFactory require('./header')
+Sidebar = React.createFactory require('./sidebar')
+Footer = React.createFactory require('./footer')
 
 class App extends React.Component
 	

@@ -1,5 +1,5 @@
 React = require 'react'
-{ ol, li, div, a } = React
+{ ol, li, div, a, span, i } = React.DOM
 
 class DashboardBreadcrumb extends React.Component
     
@@ -13,9 +13,9 @@ class DashboardBreadcrumb extends React.Component
                         i className: 'icon-speech'
                     a className: 'btn btn-secondary', href: '#/dashboard',
                         i className: 'icon-graph'
-                        '&nbsp;Dashboard'
+                        ' Dashboard'
                     a className: 'btn btn-secondary', href: '#/dashboard',
                         i className: 'icon-settings'
-                        '&nbsp;Settings'
+                        ' Settings'
 
 module.exports = DashboardBreadcrumb
