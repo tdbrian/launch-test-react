@@ -14,6 +14,9 @@ class LoginPage extends React.Component
             username: ''
             password: ''
 
+    componentWillReceiveProps: (nextProps) =>
+        if nextProps.authStatus.isAuthenticated then browserHistory.push '/dashboard'
+
     updateLoginState: (event) =>
         @state[event.target.name] = event.target.value
         @setState @state
@@ -37,7 +40,6 @@ class LoginPage extends React.Component
 
 mapStateToProps = (state, ownProps) ->
     authStatus = state.authenticationStatus.toObject()
-    if authStatus.isAuthenticated then browserHistory.push '/dashboard'
     currentUser: state.currentUser.toObject(), authStatus: authStatus
 
 mapDispatchToProps = (dispatch) ->

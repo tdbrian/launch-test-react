@@ -12,6 +12,7 @@ DashboardPage = require './components/dashboard/dashboard.page'
 module.exports = ->
     Router history: browserHistory,
         Route path: '/', component: LoginPageConnect
+        Route path: '/login', component: LoginPageConnect
         Route path: '/dashboard', component: App,
             IndexRoute component: DashboardPage
             Route path: 'dashboard', component: DashboardPage
