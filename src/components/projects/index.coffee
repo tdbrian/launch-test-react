@@ -1,0 +1,5 @@
+exports.ProjectDetailsPage = require './project-details.page'
+exports.ProjectEditPage = require './project-edit.page'
+exports.ProjectNewPage = require './project-new.page'
+exports.ProjectsListPage = require './projects-list.page'
+exports.ProjectsPage = require './projects.page'

@@ -1,5 +1,7 @@
 React = require 'react'
 { header, div, a, ul, li, button, img, span, strong, i } = React.DOM
+ReactRouter = require 'react-router'
+Link = React.createFactory ReactRouter.Link
 
 class Header extends React.Component
   
@@ -16,7 +18,7 @@ class Header extends React.Component
                     li className: 'nav-item',
                         a className: 'nav-link navbar-toggler layout-toggler', href: '#'
                     li className: 'nav-item p-x-1',
-                        a className: 'nav-link', href: '#', 'Projects'
+                        Link className: 'nav-link', activeClassName: 'active', to: '/projects/list', 'Projects'
                     li className: 'nav-item p-x-1',
                         a className: 'nav-link', href: '#', 'Users'
                     li className: 'nav-item p-x-1',
@@ -41,7 +43,7 @@ class Header extends React.Component
                             role: 'button' 
                             ariaHaspopup: 'true' 
                             ariaExpanded: 'false'
-                            img src: 'img/avatars/default-user-pic.jpg', className: 'img-avatar', alt: 'admin@bootstrapmaster.com'
+                            img src: '/img/avatars/default-user-pic.jpg', className: 'img-avatar', alt: 'admin@bootstrapmaster.com'
                             span className: 'hidden-md-down', 'Admin'
                         
                         div className: 'dropdown-menu dropdown-menu-right',

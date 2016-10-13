@@ -1,7 +1,7 @@
 React = require 'react'
 { main } = React.DOM
 
-class DashboardPage extends React.Component
+class ProjectsPage extends React.Component
 
     constructor: (props, context) ->
         super props, context
@@ -9,4 +9,4 @@ class DashboardPage extends React.Component
     render: ->
         main className: 'main', @props.children
 
-module.exports = DashboardPage
+module.exports = ProjectsPage
